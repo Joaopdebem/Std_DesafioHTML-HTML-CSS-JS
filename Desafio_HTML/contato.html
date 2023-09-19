@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos</title>
+
+    <style>
+        body {
+            background: linear-gradient(#e66465, #9198e5);
+            height: 98vh;
+        }
+        
+        h2 {
+            font-family: Verdana;
+            font-weight: bold;
+            font-size: 58px;
+            color: rgb(54, 54, 54);
+        }
+        
+        .corpo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        div {
+            margin: 10px;
+        }
+        
+        .container-formulario {
+            width: 500px;
+            background: #ff7878;
+            border-radius: 15px;
+            box-shadow: 4px 3px 5px 2px rgb(54, 54, 54);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        select {
+            border-radius: 10px;
+            margin-left: 30px;
+            width: 100px;
+            height: 24px;
+            font-family: Verdana;
+            padding: 2px;
+            outline: none;
+            background: #f8b6b6;
+        }
+        
+        legend {
+            font-family: Verdana;
+            font-weight: bold;
+            font-size: 18px;
+            position: relative;
+            top: 3px;
+            margin-left: 7.5px;
+            color: rgb(54, 54, 54);
+            filter: brightness(90%)
+        }
+        
+        fieldset {
+            border: transparent;
+        }
+        
+        textarea {
+            padding: 10px;
+            font-family: Verdana;
+            background: #f8b6b6;
+            border-radius: 5px;
+            outline: none;
+            font-family: Verdana;
+            transition: 0.5s;
+            cursor: pointer;
+            border: 2px solid transparent;
+            margin-top: 3px;
+        }
+        
+        textarea:hover {
+            border-radius: 10px;
+            border: 2px solid rgb(54, 54, 54);
+        }
+        
+        #nomeCompleto,
+        #email {
+            border-radius: 5px;
+            outline: none;
+            margin: 4px;
+            width: 280px;
+            height: 25px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family: Verdana;
+            background: #f8b6b6;
+            transition: 0.5s;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        #nomeCompleto:hover,
+        #email:hover {
+            border-radius: 10px;
+            border: 2px solid rgb(54, 54, 54);
+        }
+        
+        .labelNome,
+        .labelEmail,
+        .labelMensagem,
+        .labelAssunto,
+        .labelNovidades {
+            font-family: Verdana;
+            font-weight: 600;
+            font-size: 14px;
+            color: rgb(54, 54, 54);
+        }
+        
+        .checkBoxNovidades {
+            width: 17px;
+            height: 17px;
+            position: relative;
+            top: 3px;
+            cursor: pointer;
+            transition: 0.4s;
+            color: black;
+        }
+        
+        .checkBoxNovidades:hover {
+            transform: scale(1.1);
+            color: #fff;
+            background: rgb(54, 54, 54);
+        }
+        
+        .container-botao {
+            justify-content: center;
+            align-items: center;
+            display: grid;
+        }
+        
+        .botaoEnviar {
+            width: 100px;
+            height: 35px;
+            border-radius: 20px;
+            outline: none;
+            border: transparent;
+            box-shadow: 1px 1px 3px rgb(54, 54, 54);
+            font-weight: bold;
+            font-family: Verdana;
+            font-size: 18px;
+            color: rgb(54, 54, 54);
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        
+        .botaoEnviar:hover {
+            transform: scale(1.1);
+            filter: invert(100%);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="corpo-container">
+        <div class="cabecalho">
+            <header>
+                <h2>Contato</h2>
+            </header>
+        </div>
+        <div class="container-formulario">
+            <form>
+                <fieldset>
+                    <legend>
+                        Entre em contato
+                    </legend>
+
+                    <div class="assuntoContato">
+                        <label for="assunto" class="labelAssunto">Assunto</label>
+                        <select name="assunto" id="assunto" required>
+                            <option value="suporte">Suporte</option>
+                            <option value="informacoes">Informações</option>
+                            <option value="vendas">Vendas</option>
+                            <option value="sac">Sac</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="container-nome">
+                        <label for="nomeCompleto" class="labelNome">Nome Completo:</label><br>
+                        <input type="text" required placeholder="Seu nome" id="nomeCompleto" autocomplete="off">
+                    </div>
+                    <div class="container-email">
+                        <label for="email" class="labelEmail">E-mail:</label><br>
+                        <input type="email" name="email" id="email" placeholder="email@dominio.com" required autocomplete="off">
+                    </div>
+                    <div class="container-mensagem">
+                        <label for="mensagem" class="labelMensagem">Mensagem:</label><br>
+                        <textarea name="mensagem" id="mensagem" cols="40" rows="10" autocomplete="off"></textarea>
+                    </div>
+                    <div class="container-novidades">
+                        <input type="checkbox" name="newsletter" id="novidadesEmail" class="checkBoxNovidades" autocomplete="off">
+                        <label for="novidadesEmail" class="labelNovidades">Aceito receber novidades por e-mail</label>
+                    </div>
+                    <div class="container-botao">
+                        <input type="button" value="Enviar" class="botaoEnviar">
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
